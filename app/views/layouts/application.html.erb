@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+	<link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Andika' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	
+	
+	<div id="head-wrap">
+		<div id="header">
+			<h1>The Harmony Project</h1>
+		</div>
+	</div>
+<div class="shadow">
+<div id="container">
+
+	
+	
+	
+	
+	<center><%= image_tag "guitarneck.png" %></center>
+	<nav>
+	<ul id="menu" class="black">
+				<li id="five">Home</li>
+				<li id="four">Cal.</li>
+				<li id="three">Gall.</li>
+				<li id="two">NY</li>
+				<li>Blog</li>
+
+		</ul>
+	</nav>
+	<div id="sidecover">
+		<div id="sidebar">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
+			<h3> Donate! </h3>
+			<center><%= image_tag "donate.gif"%></center>
+			<p>Pellentesque egestas justo convallis dui ullamcorper interdum. </p>
+			<p>Nunc placerat lacinia felis, ac convallis arcu rutrum sed. Curabitur blandit luctus facilisis. </p> 
+			<p>Cras et purus et mi aliquet pretium. Curabitur purus nunc, suscipit sed venenatis at, tempus ac velit. </p>
+			
+			<h3> Contact us!</h3>
+				<ul>
+					<li>Christine: testing@gmail.com</li>
+				</ul>
+		</div>
+	</div>
+	
+	<div id="main">
+		<h2><%= @title %></h2>
+		<%= yield %>
+	</div>
+	
+</div>
+</div>
+
+
+</body>
+</html>

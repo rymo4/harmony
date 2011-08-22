@@ -1,0 +1,29 @@
+<center><%= link_to 'New Event', new_event_path %></center><br />
+<div class="cal">
+<% @events.each_with_index do |event, index| %>
+
+  <% if index==0%>
+		<div class="cal-text top-round">
+	<% elsif index==@events.count-1%>
+		<div class="cal-text bottom-round">
+	<% else %>
+			<div class="cal-text">
+	<%end%>
+	
+	<h3><%= event.title %> - <%= event.start.strftime('%A %B %e %Y at %I:%M %p')%> EST</h3>
+	<p><%= event.body %></p>
+	 <%= link_to 'Show', event %>
+   <%= link_to 'Edit', edit_event_path(event) %>
+   <%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %>
+	<% if index!=@events.count-1%>
+		<div class="bar"></div>
+		<% end %>
+</div>
+	
+	
+
+   
+<% end %>
+</div>
+
+
