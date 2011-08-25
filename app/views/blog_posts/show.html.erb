@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Media:</b>
+  <%= @blog_post.media %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @blog_post.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+<%= link_to 'Back', blog_posts_path %>

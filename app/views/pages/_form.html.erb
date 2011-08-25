@@ -10,10 +10,11 @@
       </ul>
     </div>
   <% end %>
-
+	<div class="field">
+    Permalink: <%= f.text_field :permalink %>
+  </div>
   <div class="field">
-    
-    <%= f.text_field :name %>
+    Name: <%= f.text_field :name %>
   </div>
   <div class="field">
     
@@ -23,3 +24,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= render 'directions' %>

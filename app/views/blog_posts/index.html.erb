@@ -1,0 +1,35 @@
+
+
+
+
+
+
+<center><%= link_to 'New Blog post', new_blog_post_path %></center><br />
+<div class="cal">
+<% @blog_posts.each_with_index do |blog_post, index| %>
+
+  <% if index==0%>
+		<div class="cal-text top-round">
+	<% elsif index==@blog_posts.count-1%>
+		<div class="cal-text bottom-round">
+	<% else %>
+			<div class="cal-text">
+	<%end%>
+	
+	<center><%= blog_post.media.html_safe%></center>
+	<p><%= simple_format(blog_post.body) %></p>
+	 	<%= link_to 'Show', blog_post %></td>
+   <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
+   <%= link_to 'Destroy', blog_post, :confirm => 'Are you sure?', :method => :delete %>
+	<% if index!=@blog_posts.count-1%>
+		<div class="bar"></div>
+		<% end %>
+</div>
+	
+	
+
+   
+<% end %>
+</div>
+
+

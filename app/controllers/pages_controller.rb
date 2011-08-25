@@ -13,7 +13,11 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page = Page.find(params[:id])
+    #if Page.find_by_permalink(params[:permalink])
+    #  @page = Page.find_by_permalink(params[:permalink])
+    #else
+      @page=Page.find(params[:id])
+    #end
     @title = @page.name
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +38,11 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
-    @page = Page.find(params[:id])
+     #if params[:permalink]
+    #   @page = Page.find_by_permalink(params[:permalink])
+     #else
+       @page=Page.find(params[:id])
+    # end
   end
 
   # POST /pages
@@ -56,11 +64,15 @@ class PagesController < ApplicationController
   # PUT /pages/1
   # PUT /pages/1.json
   def update
-    @page = Page.find(params[:id])
+    #if params[:permalink]
+    #  @page = Page.find_by_permalink(params[:permalink])
+    #else
+      @page=Page.find(params[:id])
+    #end
 
     respond_to do |format|
       if @page.update_attributes(params[:page])
-        format.html { redirect_to @page, :notice => 'Page was successfully updated.' }
+        format.html { redirect_to "/#{@page.permalink}", :notice => 'Page was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -72,7 +84,11 @@ class PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
-    @page = Page.find(params[:id])
+    #if params[:permalink]
+    #  @page = Page.find_by_permalink(params[:permalink])
+    #else
+      @page=Page.find(params[:id])
+    #end
     @page.destroy
 
     respond_to do |format|

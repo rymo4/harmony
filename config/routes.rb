@@ -1,8 +1,39 @@
 Harmony::Application.routes.draw do
-  resources :pages
+  resources :images
+
+  get "statics/home"
+  match '/home', :to => 'statics#home'
+
+  resources :blog_posts#, :as=>"blog"
+
+
+  #match '/:permalink' => 'pages#show'
+  # match '/:permalink/edit' => 'pages#edit'
+  # match '/:permalink' => 'pages#update', :via => "put"
+  
+  #match "pages/:id", redirect {|params| "your_root_url" if params[:id] == 2}
+
+  resources :pages#, :path => ''
+  
 
   resources :events
+  
+  #match "home" => "pages#show#2"
+  
+  #root :to => 'pages/2'
+      #match "/home" => "pages/show", :as => :page  
 
+  #get "pages/show"
+  #get "blog_posts/index"
+  #get "blog_posts/show"
+  #static 'pages/:permalink', :controller => 'pages', :action => 'show'
+ 
+  
+  
+  #match '/blog', :to => 'blog_posts#index' 
+  #match '/:permalink', :to => 'pages/:permalink'
+  #root :to => 'pages#main'
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

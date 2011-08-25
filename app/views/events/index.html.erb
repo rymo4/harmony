@@ -10,7 +10,7 @@
 			<div class="cal-text">
 	<%end%>
 	
-	<h3><%= event.title %> - <%= event.start.strftime('%A %B %e %Y at %I:%M %p')%> EST</h3>
+	<h3><%= event.title %> - <span class="date"> <%= event.start.strftime('%m/%d/%Y')%> at <%= event.start.strftime('%I:%e %p')%> EST</span></h3>
 	<p><%= event.body %></p>
 	 <%= link_to 'Show', event %>
    <%= link_to 'Edit', edit_event_path(event) %>

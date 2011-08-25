@@ -10,13 +10,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817232947) do
+ActiveRecord::Schema.define(:version => 20110824082932) do
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "media"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"
     t.datetime "start"
     t.text     "body"
     t.datetime "end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "hotlink"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
