@@ -1,6 +1,6 @@
 $content-back: #fff;
 $highlight: #ddd; //871976;
-$highlight-text: #871976;
+$highlight-text: rgb(98, 43, 107);
 
 body,
 html {
@@ -17,7 +17,7 @@ body {
   -moz-box-shadow: 0px 0px 5px #000;
   -webkit-box-shadow: 0px 0px 5px #000;
   box-shadow: 1px 3px 3px #333;
-	width: 920px;
+	width: 960px;
 	margin: 0 auto;
 	border-bottom-left-radius: 30px;
 	border-bottom-right-radius: 30px;
@@ -27,26 +27,26 @@ body {
 	-webkit-border-bottom-right-radius: 30px;
 } 
 p {
-	font-family: 'Andika', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: rgb(67, 47, 32);
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'IM Fell Double Pica SC', serif;
+	//font-family: 'IM Fell Double Pica SC', serif;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 }
-#guitar {
-	background-image: url('/assets/guitar-outline.png');
-	background-repeat:no-repeat;
-	width: 400px;
-	height: 100%;
-	position: absolute;
-}
+
+
 #container {
-	-moz-opacity:.95; filter:alpha(opacity=95); opacity:.95;
-	width:900px;
+	//-moz-opacity:.95; filter:alpha(opacity=95); opacity:.95;
+	width:940px;
 	-moz-box-shadow:inset 0 0 40px #DDD;
   -webkit-box-shadow:inset 0 0 40px #DDD;
   box-shadow:inset 0 0 40px #DDD;
 	margin:-1px auto 20px auto;
-	background: $content-back;
+	background: rgb(255,255,255);
+	background: rgba(255,255,255,.85);
 	padding: 10px;
 	overflow: hidden;
 	border-top: 1px solid #ddd;
@@ -58,9 +58,14 @@ h1, h2, h3, h4, h5, h6 {
 	-webkit-border-bottom-right-radius: 30px;
 	img {
 		margin: 0 auto;
-		
+	}
+	h2 {
+			margin-top: 30px;
+			color: $highlight-text;
+			font-size: 30px;
 	}
 }
+
 
 #header{
 	height: 80px;
@@ -70,39 +75,88 @@ h1, h2, h3, h4, h5, h6 {
 	-moz-box-shadow:inset 0 0 40px #DDD;
   -webkit-box-shadow:inset 0 0 40px #DDD;
   box-shadow:inset 0 0 40px #DDD;
+	overflow: hidden;
 	h1 {
 		text-align: center;
 		font-size: 50px;
-		color: #444;
-		//text-shadow: -1px 0 #777, 0 1px #777, 1px 0 #777, 0 -1px #777;
-		text-decoration: underline;
-		font-style: bold;
+		color: $highlight-text;
+		letter-spacing: 3px;
+		font-family: 'Monoton', cursive;
+		//text-shadow: 0 0 1em $highlight-text, 0 0 1em $highlight-text,
+		  //      0 0 1em $highlight-text;
+		//text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #FFF;
+		//text-decoration: underline;
+		//font-style: bold;
 	}
+	
 }
 #head-wrap {
 	box-shadow: 0px 0 5px #000000;
 	-moz-box-shadow: 0px 0 5px #000000;
 	-webkit-box-shadow: 0px 0 5px #000000;	
 }
-#guitar-neck {
-	background-image: url('/assets/guitarneck.png') ;
-	width:900px;
-	height:116px;
-	margin: 0 auto;
+nav {
+	//margin-top: 15px;
+	ul {
+		list-style: none;	
+		position: absolute;
+		padding: 0px 10px;
+		height: 28px;
+		width: 300px;
+		margin-left: -160px;
+		top: 72px;
+		left: 50%;
+		
+		text-align: center;
+		//list-style-type: circle;
+		li {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+			//float: left;
+			//margin-right: 0px;
+			display: inline;
+			line-height: 28px;
+			font-size: 15px;
+			a{
+				color: #444;
+				text-decoration: none;
+				&:hover{
+					color: $highlight-text;
+					font-weight: 400;
+				}
+			}
+		}
+	}
 }
+
+.purp {
+	color: $highlight-text;
+	font-weight: 400;
+}
+#guitar-neck {
+	background-image: url('/assets/guitarneck.png');
+	position: absolute;
+	width:1400px;
+	height:116px;
+	top: 3px;
+	left: 50%;
+	margin-left: -700px;
+}
+
 #main {
 	float:left;
-	width:660px;
+	width:700px;
 	padding: 20px 10px 20px 10px;
 	p {
 		text-indent: 25px;
+		text-align: justify;
 	}
 	h2 {
 		text-align: center;
 		color: $highlight-text;
 		font-size: 25px;
 	}
-	img {
+	img, iframe {
 		border: 1px solid $highlight;
 		background-color: #fff;
 		padding: 5px;
@@ -134,52 +188,24 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 20px 10px 10px 0;
 	float: left;
 }
-nav {
-	ul {
-		list-style: none;
-		li {
-			margin-right: 10px;
-			display: inline;
-			line-height: 28px;
-			font-size: 15px;
-			a{
-				color: #444;
-				text-decoration: none;
-				&:hover{
-					color: $highlight-text;
-				}
-			}		
-		}
-	}
-}
-#new-menu {
-	height: 28px;
-	width: 290px;
-	background-color: #FFF;
-	float: right;
-	margin-top: -28px;
-	border-top-left-radius: 10px;
-	-webkit-border-top-left-radius: 10px;
-	-moz-border-top-left-radius: 10px;
-	box-shadow: inset -33px 0px 33px -33px #EEE;
-	-moz-box-shadow:inset -33px 0px 33px -33px #EEE;
-	-webkit-box-shadow:inset -33px 0px 33px -33px #EEE;
-}
+
 .cal {
 	background: $highlight;
 	padding: 5px 5px 5px 5px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	h3{
-		font-family: 'Andika', sans-serif;
+		//font-family: 'Andika', sans-serif;
 		font-style: bold;
 		text-align: center;
 		line-height: 1;
 		margin-top: 0px;
 		padding: 5px;
+		font-weight: 400;
 		span {
-			font-family: 'Andika', sans-serif;
-			font-size: 12px;	
+			//: 'Andika', sans-serif;
+			font-weight: 300;
+			//font-size: 12px;	
 		}
 	}
 }
