@@ -17,6 +17,7 @@ gem 'jquery-rails'
 
 gem "rinku", "~> 1.2.2"
 
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -28,4 +29,5 @@ gem "rinku", "~> 1.2.2"
 
 group :production do
   gem 'therubyracer', '>= 0.8.2'
+  gem 'pg'
 end
