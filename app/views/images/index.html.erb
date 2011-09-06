@@ -1,23 +1,24 @@
-<h1>Listing images</h1>
-
-<table>
-  <tr>
-    <th>Hotlink</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @images.each do |image| %>
-  <tr>
-    <td><%= image.hotlink.html_safe %></td>
-    <td><%= link_to 'Show', image %></td>
-    <td><%= link_to 'Edit', edit_image_path(image) %></td>
-    <td><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
+<script>
+$(document).ready(function() {
+		$(".single_image").fancybox({
+			'transitionIn' : 'fade',
+			'transitionOut' : 'fade',
+		});
+	});
+</script>
+<center><%= link_to 'New Image', new_image_path %></center>
 <br />
+<div id="gal-cover">
+<% @images.each do |image| %>
+<div class="border">
+<div class="crop">
+<div class="gal">
+ 		<%= link_to "#{image.small}".html_safe, "#{image.location}", :class => "single_image", :href=>"#{image.location}" %>
+<br />
+    <center><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></center>
+</div>
+</div>
+</div>
+<% end %>
+</div>
 
-<%= link_to 'New Image', new_image_path %>

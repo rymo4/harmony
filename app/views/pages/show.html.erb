@@ -3,7 +3,7 @@
  
 
 <p>
-  <%= Rinku.auto_link(simple_format(@page.content.html_safe, {}, {:sanitize => false}).html_safe, mode=:all, link_attr=nil) %>
+  <%= Rinku.auto_link(simple_format(@page.format.html_safe, {}, {:sanitize => false}).html_safe, mode=:all, link_attr=nil) %>
 			
 </p>
 

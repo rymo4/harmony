@@ -5,20 +5,26 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	
+	<% if @images %>
+		<%= javascript_include_tag "jquery.easing-1.3.pack.js" %>
+		<%= javascript_include_tag "jquery.mousewheel-3.0.4.pack.js" %>
+		<%= javascript_include_tag "jquery.fancybox-1.3.4.js" %>
+		<%= stylesheet_link_tag    "jquery.fancybox-1.3.4.css" %>
+		
+	<% end %>
 	<link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div id="head-wrap">
 		<div id="header">
-			<h1>The Foundation</h1>
+			<h1>Make Music <br />Foundation</h1>
 			<div id="guitar-neck"></div>	
 			<nav>
 				<ul>
 					<li><%=link_to 'Home', '/home'%> <span class="purp">&bull;</span> </li>
 					<li><%=link_to 'Calendar', events_path%> <span class="purp">&bull;</span></li>
-					<li><%=link_to 'Gallery', '#'%> <span class="purp">&bull;</span></li>
+					<li><%=link_to 'Gallery', '/images'%> <span class="purp">&bull;</span></li>
 					<li><%=link_to 'NY', '#' %> <span class="purp">&bull;</span></li>
 					<li><%=link_to 'Blog', '/blog_posts' %></li>
 				</ul>
@@ -26,10 +32,9 @@
 		</div>
 	</div>
 	<div class="shadow">
-		
 		<div id="container">
-			
 			<center><h2><%= @title %></h2></center>
+			<% if @page %>
 			<div id="sidecover">
 				<div id="sidebar">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
@@ -46,9 +51,10 @@
 					</ul>
 			</div>
 		</div>
-	
+		<div id="main" class="small">
+		<% else %>
 		<div id="main">
-			
+		<% end %>			
 			<%= yield %>
 		</div>
 	</div>
