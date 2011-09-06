@@ -18,9 +18,9 @@
 	
 	<center><%= blog_post.media.html_safe%></center>
 	<p><%= simple_format(blog_post.body) %></p>
-	 	<%= link_to 'Show', blog_post %></td>
+	 	
    <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
-   <%= link_to 'Destroy', blog_post, :confirm => 'Are you sure?', :method => :delete %>
+   <%= link_to 'Delete', blog_post, :confirm => 'Are you sure?', :method => :delete %>
 	<% if index!=@blog_posts.count-1%>
 		<div class="bar"></div>
 		<% end %>
