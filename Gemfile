@@ -26,3 +26,6 @@ gem "rinku", "~> 1.2.2"
 # To use debugger
 # gem 'ruby-debug'
 
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+end
