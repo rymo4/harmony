@@ -27,5 +27,5 @@ gem "rinku", "~> 1.2.2"
 # gem 'ruby-debug'
 
 group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'therubyracer-heroku', '>= 0.8.2'
 end
