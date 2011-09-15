@@ -3,7 +3,7 @@ class BlogPostsController < ApplicationController
   # GET /blog_posts.json
   def index
     @blog_posts = BlogPost.order("created_at DESC")
-
+    @title="Blog"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @blog_posts }

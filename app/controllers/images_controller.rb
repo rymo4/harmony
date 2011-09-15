@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   # GET /images.json
   def index
     @images = Image.order("created_at DESC")
-
+    @title="Gallery"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @images }
