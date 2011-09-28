@@ -2,7 +2,8 @@ Harmony::Application.routes.draw do
   resources :images
 
   get "statics/home"
-  match '/home', :to => 'statics#home'
+  #match '/home', :to => 'statics#home'
+  root :to =>"statics#home"
 
   resources :blog_posts#, :as=>"blog"
 
