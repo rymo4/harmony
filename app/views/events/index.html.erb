@@ -1,4 +1,4 @@
-<center><%= link_to 'New Event', new_event_path %></center><br />
+<center>	 	<% if signed_in? %><%= link_to 'New Event', new_event_path %><% end %></center><br />
 <div class="cal">
 <% @events.each_with_index do |event, index| %>
 
@@ -12,9 +12,11 @@
 	
 	<h3><%= event.title %> <div class="date"> <%= event.start.strftime("%a, %b %e at %l:%M") + event.start.strftime("%p").downcase%> EST</div></h3>
 	<p><%= Rinku.auto_link(simple_format(event.body.html_safe, {}, {:sanitize => false}).html_safe, mode=:all, link_attr=nil) %></p>
+		 	<% if signed_in? %>
 	 <%= link_to 'Show', event %>
    <%= link_to 'Edit', edit_event_path(event) %>
    <%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %>
 	<% if index!=@events.count-1%>
 		<div class="bar"></div>
 		<% end %>

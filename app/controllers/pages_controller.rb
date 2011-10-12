@@ -72,7 +72,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.update_attributes(params[:page])
-        format.html { redirect_to "/#{@page.permalink}", :notice => 'Page was successfully updated.' }
+        format.html { redirect_to root_path, :notice => 'Page was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

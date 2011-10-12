@@ -1,4 +1,6 @@
 Harmony::Application.routes.draw do
+  resources :users
+
   resources :images
 
   get "statics/home"
@@ -15,9 +17,13 @@ Harmony::Application.routes.draw do
   #match "pages/:id", redirect {|params| "your_root_url" if params[:id] == 2}
 
   resources :pages#, :path => ''
-  
 
   resources :events
+  resources :sessions, :only => [:new, :create, :destroy]
+  
+  
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
   
   #match "home" => "pages#show#2"
   

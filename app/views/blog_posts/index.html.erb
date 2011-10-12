@@ -1,4 +1,4 @@
-<center><%= link_to 'New Blog post', new_blog_post_path %></center><br />
+<center>	 	<% if signed_in? %><%= link_to 'New Blog post', new_blog_post_path %><% end %></center><br />
 <div class="cal">
 <% @blog_posts.each_with_index do |blog_post, index| %>
 
@@ -12,9 +12,10 @@
 	
 	<center><%= blog_post.media.html_safe%></center>
 	<p><%= simple_format(blog_post.body) %></p>
-	 	
+	 	<% if signed_in? %>
    <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
    <%= link_to 'Delete', blog_post, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
 	<% if index!=@blog_posts.count-1%>
 		<div class="bar"></div>
 		<% end %>
