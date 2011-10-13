@@ -16,7 +16,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 
 gem "rinku", "~> 1.2.2"
-
+gem 'rake', '0.8.7'
 
 # Use unicorn as the web server
 # gem 'unicorn'
