@@ -1,4 +1,4 @@
-require 'find'  
+
 
 namespace :db do
   desc "Fill database with sample data"
