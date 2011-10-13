@@ -2,7 +2,7 @@ class Image < ActiveRecord::Base
   before_save :erase_link!
   before_update :erase_link!
   
-  validates :hotlink, :presence => true,
+  validates :hotlink, :presence => true
   
   def erase_link!
     self.hotlink=self.hotlink.gsub(/<a.*><img/i, "<img").gsub('</a>', '')

@@ -6,19 +6,31 @@ $(document).ready(function() {
 		});
 	});
 </script>
-<center>	 	<% if signed_in? %><%= link_to 'New Image', new_image_path %><% end %></center>
+ 	
+	<% if signed_in? %>
+	<p>Copy and paste the code from the Make Music Flickr in here! Use the default size (Medium 500).</p>
+	<center>	
+		<%= link_to 'New Image', new_image_path %>
+	</center>
+		
+	<% end %>
+
 <br />
 <div id="gal-cover">
 <% @images.each do |image| %>
-<div class="border">
+
 <div class="crop">
+	<% if signed_in? %><%= link_to 'X', image, :confirm => 'Are you sure?', :method => :delete, :class=> :delete %><% end %>
 <div class="gal">
+	<div class="overflow">
  		<%= link_to "#{image.small}".html_safe, "#{image.location}", :class => "single_image", :href=>"#{image.location}" %>
+	</div>
 <br />
-    <center>	 	<% if signed_in? %><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %><% end %></center>
+   
 </div>
+ 
 </div>
-</div>
+
 <% end %>
 </div>
 

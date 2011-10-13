@@ -12,6 +12,7 @@
 	
 	<center><%= blog_post.media.html_safe%></center>
 	<p><%= simple_format(blog_post.body) %></p>
+	<p>Posted <%= time_ago_in_words(blog_post.created_at) %> ago.</p>
 	 	<% if signed_in? %>
    <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
    <%= link_to 'Delete', blog_post, :confirm => 'Are you sure?', :method => :delete %>
