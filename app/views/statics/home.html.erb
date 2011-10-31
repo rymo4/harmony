@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
- 
+<% if signed_in? %>
+<p><center> Click <%= link_to 'here', edit_page_path(@page)%> to edit </center></p>
+<% end %>
+
 
 <p>
   <%= Rinku.auto_link(simple_format(@page.format.html_safe, {}, {:sanitize => false}).html_safe, mode=:all, link_attr=nil).html_safe %>
 			
 </p>
 
-<% if signed_in? %>
-<h2> Click <%= link_to 'here', edit_page_path(@page)%> to edit </h2>
-<% end %>
 
 
