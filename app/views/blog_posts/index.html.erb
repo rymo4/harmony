@@ -1,4 +1,4 @@
-<center>	 	<% if signed_in? %><%= link_to 'New Blog post', new_blog_post_path %><% end %></center><br />
+<center>	 	<% if signed_in? %><br /><%= link_to 'New Blog post', new_blog_post_path %><% end %></center><br />
 <div class="cal">
 <% @blog_posts.each_with_index do |blog_post, index| %>
 

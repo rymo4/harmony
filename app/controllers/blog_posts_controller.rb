@@ -44,8 +44,8 @@ class BlogPostsController < ApplicationController
 
     respond_to do |format|
       if @blog_post.save
-        format.html { redirect_to @blog_post, :notice => 'Blog post was successfully created.' }
-        format.json { render :json => @blog_post, :status => :created, :location => @blog_post }
+        format.html { redirect_to blog_posts_url, :notice => 'Blog post was successfully created.' }
+        format.json { render :json => blog_posts_url, :status => :created, :location => @blog_post }
       else
         format.html { render :action => "new" }
         format.json { render :json => @blog_post.errors, :status => :unprocessable_entity }
@@ -60,7 +60,7 @@ class BlogPostsController < ApplicationController
 
     respond_to do |format|
       if @blog_post.update_attributes(params[:blog_post])
-        format.html { redirect_to @blog_post, :notice => 'Blog post was successfully updated.' }
+        format.html { redirect_to blog_posts_url, :notice => 'Blog post was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

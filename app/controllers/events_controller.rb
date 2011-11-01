@@ -44,8 +44,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, :notice => 'Event was successfully created.' }
-        format.json { render :json => @event, :status => :created, :location => @event }
+        format.html { redirect_to events_url, :notice => 'Event was successfully created.' }
+        format.json { render :json => events_url, :status => :created, :location => @event }
       else
         format.html { render :action => "new" }
         format.json { render :json => @event.errors, :status => :unprocessable_entity }
@@ -60,7 +60,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, :notice => 'Event was successfully updated.' }
+        format.html { redirect_to events_url, :notice => 'Event was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
