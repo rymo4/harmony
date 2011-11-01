@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   before_filter :correct_user, :only => [:edit, :update]
-  before_filter :admin_user,   :only => :destroy
+
   before_filter :authenticate, :except => [:show, :new, :create]
   
   # GET /users
@@ -81,7 +81,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to users_path }
       format.json { head :ok }
     end
   end
@@ -97,8 +97,8 @@ class UsersController < ApplicationController
            redirect_to(root_path) unless current_user?(@user)
       end
 
-      def admin_user
-            redirect_to(root_path) unless current_user.admin?
-      end
+      #def admin_user
+      #      redirect_to(root_path) unless current_user.admin?
+      #end
   
 end
